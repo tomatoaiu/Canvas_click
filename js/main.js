@@ -32,6 +32,8 @@ jQuery(function() {
         //クリックしたときの処理
         onClick: function () {
           this.animateShape('circle1', {
+            strokeStyle: '#FFF',
+            fillStyle: '#FFF',
             endlinewidth: 5,
             endcoord: {x: 140, y: 180, r: 120}
           });
