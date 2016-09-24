@@ -13,28 +13,21 @@ jQuery(function() {
       zindex: 15,
       //図形のデフォルトのスタイル
       style: {
-        strokeStyle: '#CCC',
-          fillStyle: '#FF0',
+        strokeStyle: '#000',
+          fillStyle: '#EEE',
           lineWidth: 2
         },
         //ポインターが図形に乗ったときのスタイル
         hoverStyle: {
           strokeStyle: '#555',
-          fillStyle: '#FF0',
+          fillStyle: '#999',
           fadeSpeed: 300,
           easeType: 'easeInQuad'
         },
         //図形をクリックした際のスタイル（ほとんど瞬間的）
         activeStyle: {
-          strokeStyle: '#00F',
-          fillStyle: '#0FF'
-        },
-        //図形の初期スタイルにグラデーション効果を付加
-        gradient: {
-          strokeStyle: '#F00',
-          startFrom: 'center',
-          color: ['#F00', '#FF0', 'rgba(0,255,255,0.8)'],
-          position: [0, 0.5, 1]
+          strokeStyle: '#FFF',
+          fillStyle: '#FFF'
         },
         //クリックしたときの処理
         onClick: function () {
