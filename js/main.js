@@ -1,5 +1,21 @@
-jQuery(function() {
-    var canvas = jQuery('#canvas');
+$(function() {
+    var canvas = $('#canvas');
+
+    //canvasサイズをブラウザ画面のサイズに
+    var can = $('#canvas').get(0);
+    var container = $('#wrap').get(0);
+    sizing();
+
+    //サイズ変更処理
+    function sizing() {
+      can.height = container.offsetHeight;
+      can.width = container.offsetWidth;
+    }
+
+    //リサイズイベントの発生時
+    window.addEventListener('resize', function() {
+      (!window.requestAnimationFrame) ? setTimeout(sizing, 300): window.requestAnimationFrame(sizing);
+    });
 
     /* IE8以下のブラウザ対策 */
     if (!jQuery.support.opacity && typeof FlashCanvas !== 'undefined') {
