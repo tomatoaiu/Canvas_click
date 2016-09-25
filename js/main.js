@@ -30,7 +30,25 @@ $(function() {
     /* プラグイン初期化 */
     canvas.clickableCanvas();
 
+    //画像の表示
+    //canvas.createShape(名前, 形, {x座標, y座標, 縦幅, 横幅, 角}, {各種設定});
+    canvas.createShape('round-rect1', 'round-rect', {x: 10, y: 10, h: 600, w: 770, r: 0}, {
+        image: {
+            x: 0,
+            y: 0,
+            url: './image/image.png', //画像パス
+            frame: true,
+            interlocked: true
+        },
+        style: {
+            lineWidth: 5, //画像の縁
+            strokeStyle: '#666',
+            fillStyle: '#00F'
+        }
+    });
+
     //元となる線の設定と描画
+    //canvas.createShape(名前, 形, [{x座標, y座標}], {各種設定});
     var l1 = canvas.createShape('line1', 'line', [
         {x: 80, y: 160}, //始点
         {x: 700, y: 160} //終点
@@ -38,11 +56,12 @@ $(function() {
         style: {
               lineWidth: 5,
               fillStyle: '#555',
-            strokeStyle: '#555'
+            strokeStyle: '#888'
         }
     });
 
     //元となる点の設定と描画
+    //canvas.createShape(名前, 形, {x座標, y座標, 角}, {各種設定});
      var c1 = canvas.createShape('circle1', 'circle', {x: 80, y: 160, r: 50}, {
       //図形のデフォルトのスタイル
       style: {
