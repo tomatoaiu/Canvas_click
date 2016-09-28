@@ -10,3 +10,6 @@ HTML Canvas
 # 参考Webページ
 HTML5のcanvas要素を常に画面いっぱいに表示されるようにする方法  
 http://tsukulog.net/archives/2134
+
+HTML5のCanvas図形をクリッカブルにするjQueryプラグイン ClickableCanvas  
+http://wiz-code.digick.jp/javascript/jquery.clickablecanvas.html
