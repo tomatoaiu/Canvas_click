@@ -4,7 +4,7 @@ $(function() {
     var cClicked1 = false,
         cClicked2 = false;
 
-    var dotName, target;
+    var dotName, target ,dotNumber;
 
     //canvasサイズをブラウザ画面のサイズに
     var size = $('#canvas').get(0);
@@ -22,12 +22,12 @@ $(function() {
       (!window.requestAnimationFrame) ? setTimeout(sizing, 300): window.requestAnimationFrame(sizing);
     });
 
-    /* IE8以下のブラウザ対策 */
+    //IE8以下のブラウザ対策
     if (!jQuery.support.opacity && typeof FlashCanvas !== 'undefined') {
       FlashCanvas.initElement(canvas.get(0));
     }
 
-    /* プラグイン初期化 */
+    //プラグイン初期化
     canvas.clickableCanvas();
 
     //画像の表示
@@ -41,9 +41,9 @@ $(function() {
             interlocked: true
         },
         style: {
-            lineWidth: 5, //画像の縁
-            strokeStyle: '#666',
-            fillStyle: '#00F'
+            lineWidth: 0, //画像の縁
+            strokeStyle: '#2FCDB4',
+            fillStyle: '#2FCDB4'
         }
     });
 
@@ -62,7 +62,7 @@ $(function() {
 
     //元となる点の設定と描画
     //canvas.createShape(名前, 形, {x座標, y座標, 角}, {各種設定});
-     var c1 = canvas.createShape('circle1', 'circle', {x: 80, y: 160, r: 50}, {
+    var c1 = canvas.createShape('circle1', 'circle', {x: 80, y: 160, r: 50}, {
       //図形のデフォルトのスタイル
       style: {
         strokeStyle: '#000',
@@ -84,14 +84,14 @@ $(function() {
       //クリックしたときの処理
       onClick: function () {
         cClicked1 = true;
-        dotClicked(c1, 'circle1');
+        dotClicked(c1, 'circle1' ,1); // ３つ目の引数に点の番号を指定
       }
 
     });
 
     //クリックされたら対象の要素の色を変更
-    //dotClicked(対象, 対象名)
-    function dotClicked(target, dotName) {
+    //dotClicked(対象, 対象名, 番号)
+    function dotClicked(target, dotName , dotNumber) {
 
       target.animateShape(dotName , {
         endcolor: {
@@ -104,6 +104,7 @@ $(function() {
       if(cClicked1 == true && cClicked2 == true){
         dotLink();
       }
+      alert(dotNumber);
     }
 
     //二点間を結ぶ線の描画
@@ -129,7 +130,7 @@ $(function() {
         //クリックしたときの処理
         onClick: function () {
           cClicked2 = true;
-          dotClicked(c2, 'circle2');
+          dotClicked(c2, 'circle2', 2); // ３つ目の引数に点の番号を指定
         }
     });
 
