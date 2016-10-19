@@ -1,6 +1,7 @@
 # Canvas_click
-canvasの要素にクリックイベントを追加
+canvasの要素にクリックイベントを追加  
 
+htmlのdivを増やさずjsないで処理
 
 # 利用したもの
 Clickable Canvas.js  
